@@ -1,0 +1,42 @@
+{
+  "name": "broadcast-server",
+  "version": "1.0.0",
+  "description": "A simple WebSocket broadcast server with CLI interface",
+  "main": "dist/index.js",
+  "bin": {
+    "broadcast-server": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "dev": "ts-node src/cli.ts",
+    "dev:server": "ts-node src/cli.ts start",
+    "dev:client": "ts-node src/cli.ts connect",
+    "server": "npm run build && node dist/cli.js start",
+    "client": "npm run build && node dist/cli.js connect",
+    "test:server": "npm run dev:server",
+    "test:client": "npm run dev:client",
+    "demo": "ts-node src/demo.ts"
+  },
+  "dependencies": {
+    "ws": "^8.14.2",
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/ws": "^8.5.8",
+    "typescript": "^5.2.2",
+    "ts-node": "^10.9.1"
+  },
+  "keywords": [
+    "websocket",
+    "broadcast",
+    "server",
+    "real-time",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT"
+}
